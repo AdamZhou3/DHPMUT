@@ -65,8 +65,6 @@ class: inverse, center, title-slide, middle
 
 2. Experiences and Reflections on Modeling and Programming
 
-3. (Some other work in transport and land-use related modeling)
-
 
 ???
 demo
@@ -110,7 +108,7 @@ class: inverse, center, middle
 --
 
 * Validation:
-	* We employed a nonlinear least squares method and a trust-region algorithm to fit the proposed GMP model to the cities stratificated sampled from global.
+	* We employed a nonlinear least squares method and a trust-region algorithm to fit the proposed GMP model to the cities stratified sampled from global.
 	
 ---
 ### Geographic Micro-process Model
@@ -128,7 +126,7 @@ class: inverse, center, middle
 
 * My contributions:
 	* I take the **model validation** for global 1300 cities using google earth engine.
-	* I compared this model with 5 other urban land density models, and discussed the **parsimony and overfitting issues** using Bayesian information criterion (BIC).	
+	* I compared this model with five other urban land density models and discussed the **parsimony and overfitting issues** using Bayesian information criterion (BIC).	
 
 ---
 class: inverse, center, middle
@@ -141,18 +139,21 @@ class: inverse, center, middle
 
 ### GMP-CA : Simulating Urban Expansion
 
-* Coupling **Microscopic Dynamics** and **Macroscopic Constraints** to Simulate Urban Expansion.
-	* Micro dynamic simulations of urban expansion are often dominated by quantitative constraints. Lack of consideration of spatial constraints.
-	* Improving traditional Cell-Based Simulation models by adding spatial constraints.
+* Background
+	* Cell-based dynamics models are developed from the ideas of complexity science
+	* Each cell represents land, and the cell state's change is determined in the **local neighbourhood** of every cell.
+	* CA is defined as $$S^{t+1} = f(S^t , S_N)$$where $S^{t+1}$ is the state of the cell at time t+1,$S_N$ is the states of neighbourhood.
 
 --
 
-* Cellular automata (CA) : assess the probability of occurrence for each grid cell by integrating:
-	* **the development potential**: driving factor (eg: traffic network, slope, and DEM).
+* In this model, we use CA to Simulate Urban Expansion. For each undeveloped cell, the probability of development is determined by integrating:
+	* **the development potential**: driving factor (e.g: traffic network, slope, and DEM).
 	* **neighborhood effect**: neighborhood development density 
 	* **constraint conditions**: (e.g. ecological protection area, natural scenic spot, etc.).
 	* **random variable**: other uncertainties.
+--
 
+* Coupling **Microscopic Dynamics** and **Macroscopic Constraints**.
 ---
 
 ### GMP-CA : Simulating Urban Expansion
@@ -169,6 +170,12 @@ class: inverse, center, middle
   <img src="img/CA-flow.png"  width="580pt" style="display: block; margin: auto;">
   <figcaption style="line-height:30px;font-family:Sans-serif; font-size: 10px;font-weight: bold; text-align:center">Fig.4 Flow Chart of GMP-CA model</figcaption>
 </figure>
+
+* sampled from 2007 and 2011, trained the data to get the **driving coefficients** of spatial drivers factors.
+* calculated the probability of transforming and update the cell state.
+* update the neighbourhood and the random factor.
+* loop until the increased urban area reaches the **quantitative constraints**.
+* model validation using predicted and actual land-use in 2016. 
 
 ---
 ### GMP-CA : Simulating Urban Expansion
@@ -189,27 +196,43 @@ class: inverse, center, middle
 
 ### Experience on Programming
 
-词云
+* Experience
+	* I learned programming mainly through open-source courses and by reproducing other's projects.
+	* I used to do some **C#**, **C++**, **Matlab**, **Mathematica**, and **Visual Basic** projects, but I have forgotten them all.
+	* In an internship as an algorithm engineer, I received comprehensive training in data science and computer science-related training such as **Linux** systems and **databases**.
+	* Currently, I prefer **python** for spatial analysis and modeling, **R** for scientific plots, **javascript** for visualization projects, and **LaTex** for writing. I recently used **go** to learn statistical causal inference, and this language is not bad.
+	* Most of my programming time is spent on switching between google, GitHub, and overflow, including writing this presentation in **HTML**
 
-完整的数据工作流
-
+* I'm always curious about where my intuition will lead me, and seeing an uncertainty have a definite outcome is the part of programming that I find the most fascinating.
+	
+* My code
+	* [My github](https://github.com/AdamZhou3)
+	* [My Scientific Plots Gallery](https://doc.zzzhou.me/zh/latest/0_SNA/50_plots.html)
+	* [My highly upvoted answer about recursion on leetcode ](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/python-di-gui-by-adamch0u/)
 
 ---
 
-### Reflections on Modeling and Programming
+### Reflections on Modeling
 
+* "All models are wrong but some are useful".
 
-* demo 
+* "With four parameters I can fit an elephant, and with five I can make him wiggle his trunk."  -- John von Neumann
+
+* "The longing to behold this **pre-established harmony** is the source of the inexhaustible patience and perseverance" -- Albert Einstein
+
+---
+
+class: inverse, center, middle
+
+# Thanks!
+### All faults are mine.
+
 ???
 跨学科的补充 与交融 单纯的方法学 的拓展意义不大  in特如果让他的model
 
 要素如何形成这种集聚的
 
 虽然我并不懂 但是可以看到 交叉的  可以将两个学科的前沿结合起来。
-
----
-
-![My Scientific Plots Gallery](https://doc.zzzhou.me/zh/latest/0_SNA/50_plots.html)
 
 ---
 
@@ -255,12 +278,7 @@ Ruiqi Li, Lei Dong, Zhang, J., Wang, X., Wang, W.-X., Di, Z., Stanley, H. E. (20
 
 .footnote[Geng, X., Li, Y., Wang, L., Zhang, L., Yang, Q., Ye, J., Liu, Y.. Spatiotemporal Multi-Graph Convolution Network for Ride-hailing Demand Forecasting.]
 
----
 
-class: inverse, center, middle
-
-# Thanks!
-### All faults are mine.
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
